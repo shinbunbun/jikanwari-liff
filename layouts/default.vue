@@ -63,11 +63,6 @@ export default {
           icon: 'mdi-account',
           title: 'マイページ',
           to: '/mypage'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
         }
       ],
       miniVariant: false,
