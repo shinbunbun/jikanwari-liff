@@ -78,8 +78,10 @@ export default {
         this.userId = userId;
         let ttdata;
         if (sessionStorage.getItem('jikanwari')) {
+          console.log(0);
           ttdata = JSON.parse(sessionStorage.getItem('jikanwari'));
         } else {
+          console.log(1);
           const GetTtdataAsync = async() => {
             let res;
             try {
