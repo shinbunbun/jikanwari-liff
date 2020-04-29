@@ -24,8 +24,11 @@
 
 export default {
   components: {
+  },
+  mounted() {
+    this.$store.state.jikanwari = '';
   }
-}
+};
 </script>
 
 <style scoped>

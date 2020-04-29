@@ -175,7 +175,6 @@ export default {
       subjects.push(newSubject);
     },
     submit () {
-      this.isLoading = true;
       const mon = [document.getElementById('mon0'), document.getElementById('mon1'), document.getElementById('mon2'), document.getElementById(
         'mon3'), document.getElementById('mon4'), document.getElementById('mon5'), document.getElementById(
         'mon6'), document.getElementById('mon7')];
@@ -217,11 +216,13 @@ export default {
 
       };
 
+      console.log(json);
+
       axios.post('https://vzh9dfwsd1.execute-api.ap-northeast-1.amazonaws.com/prod', ({
         data: json
       }))
         .then((res) => {
-          window.onbeforeunload = null;
+          console.log(res);
           this.$router.push('/registration/complete');
         }).catch((err) => {
           alert(err);
