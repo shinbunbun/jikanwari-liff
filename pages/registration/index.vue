@@ -27,7 +27,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}0`"
-                    :value="`${item.dayOfWeek.a}`"
+                    :value="`${item.a}`"
                     type="text"
                     class="form-control"
                     placeholder="0限"
@@ -38,7 +38,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}1`"
-                    :value="`${item.dayOfWeek.a}`"
+                    :value="`${item.b}`"
                     type="text"
                     class="form-control"
                     placeholder="1限"
@@ -49,7 +49,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}2`"
-                    :value="`${item.a}`"
+                    :value="`${item.c}`"
                     type="text"
                     class="form-control"
                     placeholder="2限"
@@ -63,7 +63,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}3`"
-                    :value="`${item.b}`"
+                    :value="`${item.d}`"
                     type="text"
                     class="form-control"
                     placeholder="3限"
@@ -74,7 +74,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}4`"
-                    :value="`${item.c}`"
+                    :value="`${item.e}`"
                     type="text"
                     class="form-control"
                     placeholder="4限"
@@ -85,7 +85,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}5`"
-                    :value="`${item.d}`"
+                    :value="`${item.f}`"
                     type="text"
                     class="form-control"
                     placeholder="5限"
@@ -99,7 +99,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}6`"
-                    :value="`${item.e}`"
+                    :value="`${item.g}`"
                     type="text"
                     class="form-control"
                     placeholder="6限"
@@ -110,7 +110,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}7`"
-                    :value="`${item.f}`"
+                    :value="`${item.h}`"
                     type="text"
                     class="form-control"
                     placeholder="7限"
@@ -247,6 +247,8 @@ export default {
       liff.getProfile()
         .then((profile) => {
           const userId = profile.userId;
+
+          console.log(this.items);
 
           const mon = [this.items[0].a, this.items[0].b, this.items[0].c, this.items[0].d, this.items[0].e, this.items[0].f, this.items[0].g, this.items[0].h];
           console.log(mon);
