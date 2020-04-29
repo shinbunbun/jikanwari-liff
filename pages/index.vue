@@ -70,13 +70,9 @@ export default {
             this.userId = userId;
             let ttdata;
 
-            console.log(this.$store.state.jikanwari);
-            this.$store.state.jikanwari = 'jikanwari';
-            console.log(this.$store.state.jikanwari);
-
-            if (sessionStorage.getItem('jikanwari')) {
+            if (this.$store.state.jikanwari) {
               console.log(0);
-              ttdata = JSON.parse(sessionStorage.getItem('jikanwari'));
+              ttdata = this.$store.state.jikanwari;
             } else {
               console.log(1);
               const GetTtdataAsync = async() => {
@@ -95,7 +91,7 @@ export default {
               const data = await GetTtdataAsync();
               console.log(data);
               ttdata = data.ttdata;
-              sessionStorage.setItem('jikanwari', JSON.stringify(ttdata));
+              this.$store.state.jikanwari = ttdata;
             }
             console.dir(ttdata);
 
