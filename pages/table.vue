@@ -48,18 +48,18 @@ export default {
   components: {
   },
   mounted() {
-    const ttdata = this.$store.state.ttdata;
-    console.log(ttdata);
+    const jikanwari = this.$store.state.jikanwari;
+    console.log(jikanwari);
 
-    const mon = ttdata.mon;
-    const tue = ttdata.tue;
-    const wed = ttdata.wed;
-    const thu = ttdata.thu;
-    const fri = ttdata.fri;
-    const sat = ttdata.sat;
+    const mon = jikanwari.mon;
+    const tue = jikanwari.tue;
+    const wed = jikanwari.wed;
+    const thu = jikanwari.thu;
+    const fri = jikanwari.fri;
+    const sat = jikanwari.sat;
     let property;
-    if (ttdata.property) {
-      const prop = ttdata.property;
+    if (jikanwari.property) {
+      const prop = jikanwari.property;
       property = prop.split(',');
     }
     console.log(property);
