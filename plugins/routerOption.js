@@ -5,7 +5,7 @@ export default ({
   app.router.beforeEach((to, from, next) => {
     console.log(to.path);
     if (to.path === '/') {
-      next();
+      next('/');
     } else {
       try {
         liff.isLoggedIn();
