@@ -19,11 +19,11 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <div class="text-right">a</div>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title />時間割bot
+      <v-toolbar-title>時間割bot</v-toolbar-title>
+      <div class="text-right">a</div>
       <v-spacer />
     </v-app-bar>
     <v-content>

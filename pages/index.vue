@@ -94,6 +94,7 @@ export default {
             return res;
           };
           const data = await GetTtdataAsync();
+          console.log(data);
           ttdata = data.ttdata;
           sessionStorage.setItem('jikanwari', ttdata);
         }
