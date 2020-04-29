@@ -3,7 +3,12 @@ export default ({
   app
 }) => {
   app.router.beforeEach((to, from, next) => {
-    console.log('test');
+    try {
+      liff.isLoggedIn();
+    } catch (e) {
+      console.log(e);
+      next('/');
+    }
     next();
   });
 };
