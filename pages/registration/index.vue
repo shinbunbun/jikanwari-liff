@@ -180,30 +180,19 @@ export default {
         .then((profile) => {
           const userId = profile.userId;
 
-          const mon = [document.getElementById('mon0'), document.getElementById('mon1'), document.getElementById('mon2'), document.getElementById(
-            'mon3'), document.getElementById('mon4'), document.getElementById('mon5'), document.getElementById(
-            'mon6'), document.getElementById('mon7')];
-          const tue = [document.getElementById('tue0'), document.getElementById('tue1'), document.getElementById('tue2'),
-            document.getElementById('tue3'), document.getElementById('tue4'), document.getElementById('tue5'), document.getElementById(
-              'tue6'), document.getElementById('tue7')
+          const mon = [document.getElementById('mon0').value, document.getElementById('mon1').value, document.getElementById('mon2').value, document.getElementById('mon3').value, document.getElementById('mon4').value, document.getElementById('mon5').value, document.getElementById('mon6').value, document.getElementById('mon7').value];
+          const tue = [document.getElementById('tue0').value, document.getElementById('tue1').value, document.getElementById('tue2').value,
+            document.getElementById('tue3').value, document.getElementById('tue4').value, document.getElementById('tue5').value, document.getElementById('tue6').value, document.getElementById('tue7').value
           ];
-          const wed = [document.getElementById('wed0'), document.getElementById('wed1'), document.getElementById('wed2'),
-            document.getElementById('wed3'), document.getElementById('wed4'), document.getElementById('wed5'),
-            document.getElementById('wed6'), document.getElementById('wed7')
+          const wed = [document.getElementById('wed0').value, document.getElementById('wed1').value, document.getElementById('wed2').value, document.getElementById('wed3').value, document.getElementById('wed4').value, document.getElementById('wed5').value, document.getElementById('wed6').value, document.getElementById('wed7').value];
+          const thu = [document.getElementById('thu0').value, document.getElementById('thu1').value, document.getElementById('thu2').value, document.getElementById('thu3').value, document.getElementById('thu4').value, document.getElementById('thu5').value,
+            document.getElementById('thu6').value, document.getElementById('thu7').value
           ];
-          const thu = [document.getElementById('thu0'), document.getElementById('thu1'), document.getElementById('thu2'),
-            document.getElementById('thu3'), document.getElementById('thu4'), document.getElementById('thu5'),
-            document.getElementById('thu6'), document.getElementById('thu7')
+          const fri = [document.getElementById('fri0').value, document.getElementById('fri1').value, document.getElementById('fri2').value, document.getElementById('fri3').value, document.getElementById('fri4').value, document.getElementById('fri5').value, document.getElementById('fri6').value, document.getElementById('fri7').value];
+          const sat = [document.getElementById('sat0').value, document.getElementById('sat1').value, document.getElementById('sat2').value, document.getElementById('sat3').value, document.getElementById('sat4').value, document.getElementById('sat5').value,
+            document.getElementById('sat6').value, document.getElementById('sat7').value
           ];
-          const fri = [document.getElementById('fri0'), document.getElementById('fri1'), document.getElementById('fri2'), document.getElementById(
-            'fri3'), document.getElementById('fri4'), document.getElementById('fri5'), document.getElementById(
-            'fri6'), document.getElementById('fri7')];
-          const sat = [document.getElementById('sat0'), document.getElementById('sat1'), document.getElementById('sat2'),
-            document.getElementById('sat3'), document.getElementById('sat4'), document.getElementById('sat5'),
-            document.getElementById('sat6'), document.getElementById('sat7')
-          ];
-          const property =
-                          `${document.getElementById('monproperty')},${document.getElementById('tueproperty')},${document.getElementById('wedproperty')},${document.getElementById('thuproperty')},${document.getElementById('friproperty')},${document.getElementById('satproperty')},`;
+          const property = `${document.getElementById('monproperty').value},${document.getElementById('tueproperty').value},${document.getElementById('wedproperty').value},${document.getElementById('thuproperty').value},${document.getElementById('friproperty').value},${document.getElementById('satproperty').value},`;
 
           const uuid = getUniqueStr(1000);
 
