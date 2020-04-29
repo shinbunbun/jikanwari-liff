@@ -11,7 +11,7 @@ export default ({
         liff.isLoggedIn();
       } catch (e) {
         console.log(e);
-        next('/');
+        location.href = '/';
       }
       next();
     }
