@@ -1,0 +1,245 @@
+<template>
+  <v-container column justify-center align-center>
+    <v-row class="text-center">
+      <v-col>
+        <p style="font-size: 30px">時間割登録</p>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col />
+      <v-col cols="12" sm="6" md="7">
+        <v-row>
+          <v-col>
+            <p>時間割を入力して下さい。</p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <p>※0時間目(朝テストなど)〜7時間目(部活など)までの時間割とその曜日の持ち物が登録できます。</p>
+          </v-col>
+        </v-row>
+        <br />
+        <form id="form" autocomplete="off">
+          <div v-for="item in items" :key="item.dayOfWeek">
+            <div :class="item.dayOfWeek">
+              <p>{{ item.dayOfWeekJa }}</p>
+              <v-row>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}0`"
+                    type="text"
+                    class="form-control"
+                    placeholder="0限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}1`"
+                    type="text"
+                    class="form-control"
+                    placeholder="1限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}2`"
+                    type="text"
+                    class="form-control"
+                    placeholder="2限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+              </v-row>
+              <div class="py-1"></div>
+              <v-row>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}3`"
+                    type="text"
+                    class="form-control"
+                    placeholder="3限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}4`"
+                    type="text"
+                    class="form-control"
+                    placeholder="4限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}5`"
+                    type="text"
+                    class="form-control"
+                    placeholder="5限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+              </v-row>
+              <div class="py-1"></div>
+              <v-row>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}6`"
+                    type="text"
+                    class="form-control"
+                    placeholder="6限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+                <v-col cols="4">
+                  <v-text-field
+                    :id="`${item.dayOfWeek}7`"
+                    type="text"
+                    class="form-control"
+                    placeholder="7限"
+                    list="list"
+                    @compositionend="update($event.target.id)"
+                  />
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col>
+                  <v-textarea id="monproperty" cols="4" class="form-control" placeholder="持ち物"></v-textarea>
+                </v-col>
+              </v-row>
+            </div>
+            <br />
+          </div>
+
+          <v-col style="text-align: center">
+            <br />
+            <v-btn x-large type="button" color="primary" @click="submit()">
+              <h4 style="margin: 5px;">送信する</h4>
+            </v-btn>
+          </v-col>
+        </form>
+      </v-col>
+      <v-col />
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  components: {
+  },
+  data () {
+    return {
+      items: [{
+        dayOfWeek: 'mon',
+        dayOfWeekJa: '月曜日'
+      }, {
+        dayOfWeek: 'tue',
+        dayOfWeekJa: '火曜日'
+      }, {
+        dayOfWeek: 'wed',
+        dayOfWeekJa: '水曜日'
+      }, {
+        dayOfWeek: 'thu',
+        dayOfWeekJa: '木曜日'
+      }, {
+        dayOfWeek: 'fri',
+        dayOfWeekJa: '金曜日'
+      }, {
+        dayOfWeek: 'sat',
+        dayOfWeekJa: '土曜日'
+      }],
+      subjects: [],
+      userId: ''
+    }
+  },
+  methods: {
+    update (id) {
+      console.log(id)
+      const newSubject = document.getElementById(`${id}`)
+      const subjects = this.subjects
+      if (subjects.find(item => item === newSubject)) {
+        return
+      }
+      subjects.push(newSubject)
+    },
+    submit () {
+      this.isLoading = true
+      const mon = [document.getElementById('mon0'), document.getElementById('mon1'), document.getElementById('mon2'), document.getElementById(
+        'mon3'), document.getElementById('mon4'), document.getElementById('mon5'), document.getElementById(
+        'mon6'), document.getElementById('mon7')]
+      const tue = [document.getElementById('tue0'), document.getElementById('tue1'), document.getElementById('tue2'),
+        document.getElementById('tue3'), document.getElementById('tue4'), document.getElementById('tue5'), document.getElementById(
+          'tue6'), document.getElementById('tue7')
+      ]
+      const wed = [document.getElementById('wed0'), document.getElementById('wed1'), document.getElementById('wed2'),
+        document.getElementById('wed3'), document.getElementById('wed4'), document.getElementById('wed5'),
+        document.getElementById('wed6'), document.getElementById('wed7')
+      ]
+      const thu = [document.getElementById('thu0'), document.getElementById('thu1'), document.getElementById('thu2'),
+        document.getElementById('thu3'), document.getElementById('thu4'), document.getElementById('thu5'),
+        document.getElementById('thu6'), document.getElementById('thu7')
+      ]
+      const fri = [document.getElementById('fri0'), document.getElementById('fri1'), document.getElementById('fri2'), document.getElementById(
+        'fri3'), document.getElementById('fri4'), document.getElementById('fri5'), document.getElementById(
+        'fri6'), document.getElementById('fri7')]
+      const sat = [document.getElementById('sat0'), document.getElementById('sat1'), document.getElementById('sat2'),
+        document.getElementById('sat3'), document.getElementById('sat4'), document.getElementById('sat5'),
+        document.getElementById('sat6'), document.getElementById('sat7')
+      ]
+      const property =
+                        `${document.getElementById('monproperty')},${document.getElementById('tueproperty')},${document.getElementById('wedproperty')},${document.getElementById('thuproperty')},${document.getElementById('friproperty')},${document.getElementById('satproperty')},`
+
+      const uuid = getUniqueStr(1000)
+
+      const json = {
+        userId: this.userId,
+        monday: mon,
+        tuesday: tue,
+        wednesday: wed,
+        thursday: thu,
+        friday: fri,
+        saturday: sat,
+        flag: 0,
+        uuid,
+        property
+
+      }
+
+      axios.post('https://vzh9dfwsd1.execute-api.ap-northeast-1.amazonaws.com/prod', ({
+        data: json
+      }))
+        .then((res) => {
+          window.onbeforeunload = null
+          location.href = './complete.html'
+        }).catch((err) => {
+          alert(err)
+        })
+
+      function getUniqueStr (myStrong) {
+        let strong = 1000
+        if (myStrong) { strong = myStrong }
+        return new Date().getTime().toString(16) + Math.floor(strong * Math.random())
+          .toString(16)
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+v-btn {
+  font-size: 30px;
+}
+</style>
