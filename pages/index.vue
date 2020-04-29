@@ -42,7 +42,6 @@
 </template>
 
 <script>
-/* eslint-disable no-undef */
 export default {
   components: {
   },
@@ -54,6 +53,7 @@ export default {
     };
   },
   mounted() {
+    // eslint-disable-next-line no-undef
     liff.getProfile().then(async(profile) => {
       const userId = profile.userId;
       this.userId = userId;
@@ -70,7 +70,7 @@ export default {
         }
         return ttdata;
       };
-      ttdata = await GetTtdataAsync().ttdata;
+      ttdata = await GetTtdataAsync();
       console.log(ttdata);
       sessionStorage.setItem('jikanwari', ttdata);
 
