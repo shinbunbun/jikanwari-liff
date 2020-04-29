@@ -22,78 +22,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="text-center">0</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
-              <tr>
-                <td class="text-center">1</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
-              <tr>
-                <td class="text-center">2</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
-              <tr>
-                <td class="text-center">3</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
-              <tr>
-                <td class="text-center">4</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
-              <tr>
-                <td class="text-center">5</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
-              <tr>
-                <td class="text-center">6</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
-              <tr>
-                <td class="text-center">7</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-                <td class="text-center">数学</td>
-              </tr>
+              <div v-for="n in 8" :key="n">
+                <tr>
+                  <td>{{ n }}</td>
+                  <td :id="`mon${n}`" />
+                  <td :id="`tue${n}`" />
+                  <td :id="`wed${n}`" />
+                  <td :id="`thu${n}`" />
+                  <td :id="`fri${n}`" />
+                  <td :id="`sat${n}`" />
+                </tr>
+              </div>
             </tbody>
           </template>
         </v-simple-table>
@@ -107,8 +46,111 @@
 
 export default {
   components: {
+  },
+  mounted() {
+    const ttdata = this.$store.state.ttdata;
+
+    const mon = ttdata.mon;
+    const tue = ttdata.tue;
+    const wed = ttdata.wed;
+    const thu = ttdata.thu;
+    const fri = ttdata.fri;
+    const sat = ttdata.sat;
+    let property;
+    if (ttdata.property) {
+      const prop = ttdata.property;
+      property = prop.split(',');
+    }
+    console.log(property);
+    /// /alert
+    console.log(3);
+    const monday = (mon.split(/\n/)).slice(1);
+    const tuesday = (tue.split(/\n/)).slice(1);
+    const wednesday = (wed.split(/\n/)).slice(1);
+    const thursday = (thu.split(/\n/)).slice(1);
+    const friday = (fri.split(/\n/)).slice(1);
+    const saturday = (sat.split(/\n/)).slice(1);
+
+    console.log(monday);
+
+    monday.map((value) => {
+      console.log(value);
+      try {
+        /// /alert
+        // console.log(counter);
+        // mondayObject[value.slice(0, 1)] = value.slice(2);
+        if (value !== 'ありません' && value !== null) {
+          document.getElementById(
+                                                        `mon${value.slice(0, 1)}`)
+            .value = value.slice(2);
+        }
+        // counter++;
+      } catch (e) {
+        console.log(e);
+      }
+    });
+    tuesday.map((value) => {
+      try {
+        if (value !== 'ありません' && value !== null) {
+          document.getElementById(
+                                                        `tue${value.slice(0, 1)}`)
+            .value = value.slice(2);
+        }
+      } catch (e) {
+        // alert
+        console.log(e);
+      }
+    });
+    wednesday.map((value) => {
+      try {
+        if (value !== 'ありません' && value !== null) {
+          document.getElementById(
+                                                        `wed${value.slice(0, 1)}`)
+            .value = value.slice(2);
+        }
+      } catch (e) {
+        // alert
+        console.log(e);
+      }
+    });
+    thursday.map((value) => {
+      try {
+        if (value !== 'ありません' && value !== null) {
+          document.getElementById(
+                                                        `thu${value.slice(0, 1)}`)
+            .value = value.slice(2);
+        }
+      } catch (e) {
+        // alert
+        console.log(e);
+      }
+    });
+    friday.map((value) => {
+      try {
+        if (value !== 'ありません' && value !== null) {
+          document.getElementById(
+                                                        `fri${value.slice(0, 1)}`)
+            .value = value.slice(2);
+        }
+      } catch (e) {
+        // alert
+        console.log(e);
+      }
+    });
+    saturday.map((value) => {
+      try {
+        if (value !== 'ありません' && value !== null) {
+          document.getElementById(
+                                                        `sat${value.slice(0, 1)}`)
+            .value = value.slice(2);
+        }
+      } catch (e) {
+        // alert
+        console.log(e);
+      }
+    });
   }
-}
+};
 </script>
 
 <style scoped>
