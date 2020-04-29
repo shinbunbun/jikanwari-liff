@@ -5,7 +5,10 @@
       <v-col cols="12" sm="6" md="3" class="text-center">
         <v-card>
           <v-card-title class="headline justify-center">今日の時間割</v-card-title>
-          <v-card-text style="font-size: 20px; color: rgba(0, 0, 0, 0.87);">{{ jikanwari }}</v-card-text>
+          <v-card-text
+            style="font-size: 20px; color: rgba(0, 0, 0, 0.87);"
+            v-html="$sanitize(jikanwari)"
+          />
           <div v-if="property">
             <v-card-title class="headline justify-center">持ち物</v-card-title>
             <v-card-text style="font-size: 20px; color: rgba(0, 0, 0, 0.87);">{{ property }}</v-card-text>
@@ -48,6 +51,7 @@
 </template>
 
 <script>
+
 export default {
   components: {
   },
@@ -173,7 +177,7 @@ export default {
                   sendTt = ttdata.fri;
                   break;
               }
-              console.log(sendTt.split('\n'));
+              console.log(sendTt.replace(/\n/g, '<br/>'));
               this.jikanwari = sendTt;
             }
           }).catch((err) => {

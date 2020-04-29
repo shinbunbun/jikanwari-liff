@@ -1,4 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from 'vuetify/es5/util/colors';
 
 export default {
   mode: 'universal',
@@ -44,9 +44,11 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [{
-    src: '~/plugins/routerOption.js',
-    ssr: false
-  }],
+      src: '~/plugins/routerOption.js',
+      ssr: false
+    },
+    '~/plugins/sanitize-html'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -97,4 +99,4 @@ export default {
      */
     extend(config, ctx) {}
   }
-}
+};
