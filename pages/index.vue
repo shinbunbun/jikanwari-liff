@@ -70,6 +70,7 @@ export default {
             this.userId = userId;
             let ttdata;
 
+            console.log(this.$store.state.jikanwari);
             if (this.$store.state.jikanwari) {
               console.log(0);
               ttdata = this.$store.state.jikanwari;
