@@ -11,11 +11,18 @@
           <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
           <p>
             For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank">documentation</a>.
+            <a
+              href="https://vuetifyjs.com"
+              target="_blank"
+            >documentation</a>.
           </p>
           <p>
             If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">discord</a>.
+            <a
+              href="https://chat.vuetifyjs.com/"
+              target="_blank"
+              title="chat"
+            >discord</a>.
           </p>
           <p>
             Find a bug? Report it on the github
