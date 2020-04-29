@@ -95,7 +95,7 @@ export default {
           ttdata = (await GetTtdataAsync()).ttdata;
           sessionStorage.setItem('jikanwari', ttdata);
         }
-        console.log(ttdata);
+        console.log(JSON.stringify(ttdata));
 
         if (ttdata === 'no') {
         // alert
