@@ -94,7 +94,7 @@ export default {
               const data = await GetTtdataAsync();
               console.log(data);
               ttdata = data.ttdata;
-              sessionStorage.setItem('jikanwari', JSON.stringify(ttdata));
+              // sessionStorage.setItem('jikanwari', JSON.stringify(ttdata));
             }
             console.dir(ttdata);
 
