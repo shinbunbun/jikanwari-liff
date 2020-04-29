@@ -10,7 +10,7 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
-        <v-list-item href="https://line.me/R/ti/p/%40ywg0561x">
+        <v-list-item href="https://line.me/R/ti/p/%40ywg0561x" target="_blank">
           <v-list-item-action>
             <v-icon>mdi-account-plus</v-icon>
           </v-list-item-action>
@@ -23,7 +23,6 @@
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>時間割bot</v-toolbar-title>
-      <div class="text-right">a</div>
       <v-spacer />
     </v-app-bar>
     <v-content>

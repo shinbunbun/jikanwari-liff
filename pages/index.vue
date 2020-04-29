@@ -30,7 +30,13 @@
             <v-btn nuxt to="/mypage" color="primary" x-large width="140px">マイページ</v-btn>
           </v-col>
           <v-col>
-            <v-btn href="https://line.me/R/ti/p/%40ywg0561x" color="#00b900" x-large width="140px">
+            <v-btn
+              href="https://line.me/R/ti/p/%40ywg0561x"
+              target="_blank"
+              color="#00b900"
+              x-large
+              width="140px"
+            >
               <font color="white">LINEBot</font>
             </v-btn>
           </v-col>
