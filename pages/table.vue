@@ -57,12 +57,6 @@ export default {
     const thu = jikanwari.thu;
     const fri = jikanwari.fri;
     const sat = jikanwari.sat;
-    let property;
-    if (jikanwari.property) {
-      const prop = jikanwari.property;
-      property = prop.split(',');
-    }
-    console.log(property);
     /// /alert
     console.log(3);
     const monday = (mon.split(/\n/)).slice(1);
@@ -84,6 +78,10 @@ export default {
           document.getElementById(
                                                         `mon${value.slice(0, 1)}`)
             .value = value.slice(2);
+        } else {
+          document.getElementById(
+                                                        `mon${value.slice(0, 1)}`)
+            .value = 'ありません';
         }
         // counter++;
       } catch (e) {
