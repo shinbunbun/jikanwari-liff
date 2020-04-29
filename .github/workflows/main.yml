@@ -28,9 +28,9 @@ jobs:
         yarn install
         yarn generate
 
-    - name: Copy to s3
+    - name: Sync s3
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: aws s3 cp ./dist ${{ secrets.S3_UPLOAD_PATH }} --recursive
+      run: aws s3 sync ./dist ${{ secrets.S3_UPLOAD_PATH }} --delete
       
