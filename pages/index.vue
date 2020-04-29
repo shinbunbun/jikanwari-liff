@@ -77,7 +77,10 @@ export default {
         const userId = profile.userId;
         this.userId = userId;
         let ttdata;
-        console.log(sessionStorage.getItem('jikanwari'));
+
+        const session = sessionStorage.getItem('jikanwari');
+        console.log(session);
+
         if (sessionStorage.getItem('jikanwari')) {
           console.log(0);
           ttdata = JSON.parse(sessionStorage.getItem('jikanwari'));
