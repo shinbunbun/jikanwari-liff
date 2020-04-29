@@ -123,7 +123,7 @@
                 <v-col>
                   <v-textarea
                     id="monproperty"
-                    v-model="item.g"
+                    v-model="item.property"
                     cols="4"
                     class="form-control"
                     placeholder="持ち物"
