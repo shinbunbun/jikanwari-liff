@@ -57,6 +57,7 @@ export default {
     liff.getProfile().then(async(profile) => {
       const userId = profile.userId;
       this.userId = userId;
+      let ttdata;
       const GetTtdataAsync = async() => {
         try {
           const getTtdata = await fetch(`https://cshm50yn8b.execute-api.ap-northeast-1.amazonaws.com/prod?userId=${userId}`, {
