@@ -251,19 +251,12 @@ export default {
           console.log(this.items);
 
           const mon = [this.items[0].a, this.items[0].b, this.items[0].c, this.items[0].d, this.items[0].e, this.items[0].f, this.items[0].g, this.items[0].h];
-          console.log(mon);
-          const tue = [document.getElementById('tue0').value, document.getElementById('tue1').value, document.getElementById('tue2').value,
-            document.getElementById('tue3').value, document.getElementById('tue4').value, document.getElementById('tue5').value, document.getElementById('tue6').value, document.getElementById('tue7').value
-          ];
-          const wed = [document.getElementById('wed0').value, document.getElementById('wed1').value, document.getElementById('wed2').value, document.getElementById('wed3').value, document.getElementById('wed4').value, document.getElementById('wed5').value, document.getElementById('wed6').value, document.getElementById('wed7').value];
-          const thu = [document.getElementById('thu0').value, document.getElementById('thu1').value, document.getElementById('thu2').value, document.getElementById('thu3').value, document.getElementById('thu4').value, document.getElementById('thu5').value,
-            document.getElementById('thu6').value, document.getElementById('thu7').value
-          ];
-          const fri = [document.getElementById('fri0').value, document.getElementById('fri1').value, document.getElementById('fri2').value, document.getElementById('fri3').value, document.getElementById('fri4').value, document.getElementById('fri5').value, document.getElementById('fri6').value, document.getElementById('fri7').value];
-          const sat = [document.getElementById('sat0').value, document.getElementById('sat1').value, document.getElementById('sat2').value, document.getElementById('sat3').value, document.getElementById('sat4').value, document.getElementById('sat5').value,
-            document.getElementById('sat6').value, document.getElementById('sat7').value
-          ];
-          const property = `${document.getElementById('monproperty').value},${document.getElementById('tueproperty').value},${document.getElementById('wedproperty').value},${document.getElementById('thuproperty').value},${document.getElementById('friproperty').value},${document.getElementById('satproperty').value},`;
+          const tue = [this.items[1].a, this.items[1].b, this.items[1].c, this.items[1].d, this.items[1].e, this.items[1].f, this.items[1].g, this.items[1].h];
+          const wed = [this.items[2].a, this.items[2].b, this.items[2].c, this.items[2].d, this.items[2].e, this.items[2].f, this.items[2].g, this.items[2].h];
+          const thu = [this.items[3].a, this.items[3].b, this.items[3].c, this.items[3].d, this.items[3].e, this.items[3].f, this.items[3].g, this.items[3].h];
+          const fri = [this.items[4].a, this.items[4].b, this.items[4].c, this.items[4].d, this.items[4].e, this.items[4].f, this.items[4].g, this.items[4].h];
+          const sat = [this.items[5].a, this.items[5].b, this.items[5].c, this.items[5].d, this.items[5].e, this.items[5].f, this.items[5].g, this.items[5].h];
+          const property = `${this.items[0].property},${this.items[1].property},${this.items[2].property},${this.items[3].property},${this.items[4].property},${this.items[5].property},`;
 
           const uuid = getUniqueStr(1000);
 
