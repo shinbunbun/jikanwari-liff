@@ -81,21 +81,23 @@ export default {
           ttdata = sessionStorage.getItem('jikanwari');
         } else {
           const GetTtdataAsync = async() => {
+            let res;
             try {
               const getTtdata = await fetch(`https://cshm50yn8b.execute-api.ap-northeast-1.amazonaws.com/prod?userId=${userId}`, {
                 mode: 'cors'
               });
-              ttdata = await getTtdata.json();
+              res = await getTtdata.json();
             } catch (e) {
               // alert
               console.log(e);
             }
-            return ttdata;
+            return res;
           };
-          ttdata = (await GetTtdataAsync()).ttdata;
+          const data = await GetTtdataAsync();
+          ttdata = data.ttdata;
           sessionStorage.setItem('jikanwari', ttdata);
         }
-        console.log(JSON.stringify(ttdata));
+        console.dir(ttdata);
 
         if (ttdata === 'no') {
         // alert
