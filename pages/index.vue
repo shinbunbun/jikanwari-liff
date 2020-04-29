@@ -97,7 +97,7 @@ export default {
 
             if (ttdata === 'no') {
               // alert
-              console.log('時間割が登録されていません。時間割登録フォームへ移動します。');
+              alert('時間割が登録されていません。時間割登録フォームへ移動します。');
               this.$router.go('/registration');
             }
             let sendTt;
