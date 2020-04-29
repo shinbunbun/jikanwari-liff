@@ -27,6 +27,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}0`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="0限"
@@ -37,6 +38,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}1`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="1限"
@@ -47,6 +49,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}2`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="2限"
@@ -60,6 +63,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}3`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="3限"
@@ -70,6 +74,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}4`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="4限"
@@ -80,6 +85,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}5`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="5限"
@@ -93,6 +99,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}6`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="6限"
@@ -103,6 +110,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}7`"
+                    :value="`${item.dayOfWeek.a}`"
                     type="text"
                     class="form-control"
                     placeholder="7限"
@@ -113,7 +121,13 @@
               </v-row>
               <v-row>
                 <v-col>
-                  <v-textarea id="monproperty" cols="4" class="form-control" placeholder="持ち物" />
+                  <v-textarea
+                    id="monproperty"
+                    :value="`${item.dayOfWeek.property}`"
+                    cols="4"
+                    class="form-control"
+                    placeholder="持ち物"
+                  />
                 </v-col>
               </v-row>
             </div>
@@ -143,22 +157,76 @@ export default {
     return {
       items: [{
         dayOfWeek: 'mon',
-        dayOfWeekJa: '月曜日'
+        dayOfWeekJa: '月曜日',
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+        e: '',
+        f: '',
+        g: '',
+        h: '',
+        property: ''
       }, {
         dayOfWeek: 'tue',
-        dayOfWeekJa: '火曜日'
+        dayOfWeekJa: '火曜日',
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+        e: '',
+        f: '',
+        g: '',
+        h: '',
+        property: ''
       }, {
         dayOfWeek: 'wed',
-        dayOfWeekJa: '水曜日'
+        dayOfWeekJa: '水曜日',
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+        e: '',
+        f: '',
+        g: '',
+        h: '',
+        property: ''
       }, {
         dayOfWeek: 'thu',
-        dayOfWeekJa: '木曜日'
+        dayOfWeekJa: '木曜日',
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+        e: '',
+        f: '',
+        g: '',
+        h: '',
+        property: ''
       }, {
         dayOfWeek: 'fri',
-        dayOfWeekJa: '金曜日'
+        dayOfWeekJa: '金曜日',
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+        e: '',
+        f: '',
+        g: '',
+        h: '',
+        property: ''
       }, {
         dayOfWeek: 'sat',
-        dayOfWeekJa: '土曜日'
+        dayOfWeekJa: '土曜日',
+        a: '',
+        b: '',
+        c: '',
+        d: '',
+        e: '',
+        f: '',
+        g: '',
+        h: '',
+        property: ''
       }],
       subjects: [],
       userId: ''
@@ -180,7 +248,8 @@ export default {
         .then((profile) => {
           const userId = profile.userId;
 
-          const mon = [document.getElementById('mon0').value, document.getElementById('mon1').value, document.getElementById('mon2').value, document.getElementById('mon3').value, document.getElementById('mon4').value, document.getElementById('mon5').value, document.getElementById('mon6').value, document.getElementById('mon7').value];
+          const mon = [this.items[0].a, this.items[0].b, this.items[0].c, this.items[0].d, this.items[0].e, this.items[0].f, this.items[0].g, this.items[0].h];
+          console.log(mon);
           const tue = [document.getElementById('tue0').value, document.getElementById('tue1').value, document.getElementById('tue2').value,
             document.getElementById('tue3').value, document.getElementById('tue4').value, document.getElementById('tue5').value, document.getElementById('tue6').value, document.getElementById('tue7').value
           ];
