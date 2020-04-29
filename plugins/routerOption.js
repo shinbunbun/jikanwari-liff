@@ -3,7 +3,8 @@ export default ({
   app
 }) => {
   app.router.beforeEach((to, from, next) => {
-    if (from.path === '/') {
+    console.log(to.path);
+    if (to.path === '/') {
       next();
     } else {
       try {
