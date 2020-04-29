@@ -175,59 +175,61 @@ export default {
       subjects.push(newSubject);
     },
     submit () {
-      const mon = [document.getElementById('mon0'), document.getElementById('mon1'), document.getElementById('mon2'), document.getElementById(
-        'mon3'), document.getElementById('mon4'), document.getElementById('mon5'), document.getElementById(
-        'mon6'), document.getElementById('mon7')];
-      const tue = [document.getElementById('tue0'), document.getElementById('tue1'), document.getElementById('tue2'),
-        document.getElementById('tue3'), document.getElementById('tue4'), document.getElementById('tue5'), document.getElementById(
-          'tue6'), document.getElementById('tue7')
-      ];
-      const wed = [document.getElementById('wed0'), document.getElementById('wed1'), document.getElementById('wed2'),
-        document.getElementById('wed3'), document.getElementById('wed4'), document.getElementById('wed5'),
-        document.getElementById('wed6'), document.getElementById('wed7')
-      ];
-      const thu = [document.getElementById('thu0'), document.getElementById('thu1'), document.getElementById('thu2'),
-        document.getElementById('thu3'), document.getElementById('thu4'), document.getElementById('thu5'),
-        document.getElementById('thu6'), document.getElementById('thu7')
-      ];
-      const fri = [document.getElementById('fri0'), document.getElementById('fri1'), document.getElementById('fri2'), document.getElementById(
-        'fri3'), document.getElementById('fri4'), document.getElementById('fri5'), document.getElementById(
-        'fri6'), document.getElementById('fri7')];
-      const sat = [document.getElementById('sat0'), document.getElementById('sat1'), document.getElementById('sat2'),
-        document.getElementById('sat3'), document.getElementById('sat4'), document.getElementById('sat5'),
-        document.getElementById('sat6'), document.getElementById('sat7')
-      ];
-      const property =
-                        `${document.getElementById('monproperty')},${document.getElementById('tueproperty')},${document.getElementById('wedproperty')},${document.getElementById('thuproperty')},${document.getElementById('friproperty')},${document.getElementById('satproperty')},`;
+      // eslint-disable-next-line no-undef
+      liff.getProfile()
+        .then((profile) => {
+          const userId = profile.userId;
 
-      const uuid = getUniqueStr(1000);
+          const mon = [document.getElementById('mon0'), document.getElementById('mon1'), document.getElementById('mon2'), document.getElementById(
+            'mon3'), document.getElementById('mon4'), document.getElementById('mon5'), document.getElementById(
+            'mon6'), document.getElementById('mon7')];
+          const tue = [document.getElementById('tue0'), document.getElementById('tue1'), document.getElementById('tue2'),
+            document.getElementById('tue3'), document.getElementById('tue4'), document.getElementById('tue5'), document.getElementById(
+              'tue6'), document.getElementById('tue7')
+          ];
+          const wed = [document.getElementById('wed0'), document.getElementById('wed1'), document.getElementById('wed2'),
+            document.getElementById('wed3'), document.getElementById('wed4'), document.getElementById('wed5'),
+            document.getElementById('wed6'), document.getElementById('wed7')
+          ];
+          const thu = [document.getElementById('thu0'), document.getElementById('thu1'), document.getElementById('thu2'),
+            document.getElementById('thu3'), document.getElementById('thu4'), document.getElementById('thu5'),
+            document.getElementById('thu6'), document.getElementById('thu7')
+          ];
+          const fri = [document.getElementById('fri0'), document.getElementById('fri1'), document.getElementById('fri2'), document.getElementById(
+            'fri3'), document.getElementById('fri4'), document.getElementById('fri5'), document.getElementById(
+            'fri6'), document.getElementById('fri7')];
+          const sat = [document.getElementById('sat0'), document.getElementById('sat1'), document.getElementById('sat2'),
+            document.getElementById('sat3'), document.getElementById('sat4'), document.getElementById('sat5'),
+            document.getElementById('sat6'), document.getElementById('sat7')
+          ];
+          const property =
+                          `${document.getElementById('monproperty')},${document.getElementById('tueproperty')},${document.getElementById('wedproperty')},${document.getElementById('thuproperty')},${document.getElementById('friproperty')},${document.getElementById('satproperty')},`;
 
-      const json = {
-        userId: this.userId,
-        monday: mon,
-        tuesday: tue,
-        wednesday: wed,
-        thursday: thu,
-        friday: fri,
-        saturday: sat,
-        flag: 0,
-        uuid,
-        property
+          const uuid = getUniqueStr(1000);
 
-      };
+          const json = {
+            userId,
+            monday: mon,
+            tuesday: tue,
+            wednesday: wed,
+            thursday: thu,
+            friday: fri,
+            saturday: sat,
+            flag: 0,
+            uuid,
+            property
 
-      console.log(json);
+          };
 
-      axios.post('https://vzh9dfwsd1.execute-api.ap-northeast-1.amazonaws.com/prod', ({
-        data: json
-      }))
-        .then((res) => {
-          console.log(res);
-          this.$router.push('/registration/complete');
-        }).catch((err) => {
-          alert(err);
+          axios.post('https://vzh9dfwsd1.execute-api.ap-northeast-1.amazonaws.com/prod', ({
+            data: json
+          }))
+            .then((res) => {
+              this.$router.push('/registration/complete');
+            }).catch((err) => {
+              alert(err);
+            });
         });
-
       function getUniqueStr (myStrong) {
         let strong = 1000;
         if (myStrong) { strong = myStrong; }
