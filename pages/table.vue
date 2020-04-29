@@ -75,13 +75,11 @@ export default {
         // console.log(counter);
         // mondayObject[value.slice(0, 1)] = value.slice(2);
         if (value !== 'ありません' && value !== null) {
-          document.getElementById(
-                                                        `mon${value.slice(0, 1)}`)
+          document.getElementById(`mon${value.slice(0, 1)}`)
             .value = value.slice(2);
         } else {
-          document.getElementById(
-                                                        `mon${value.slice(0, 1)}`)
-            .value = 'ありません';
+          document.getElementById(`mon${value.slice(0, 1)}`)
+            .textContent = 'ありません';
         }
         // counter++;
       } catch (e) {
