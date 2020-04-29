@@ -77,23 +77,27 @@ export default {
         const userId = profile.userId;
         this.userId = userId;
         let ttdata;
-        const GetTtdataAsync = async() => {
-          try {
-            const getTtdata = await fetch(`https://cshm50yn8b.execute-api.ap-northeast-1.amazonaws.com/prod?userId=${userId}`, {
-              mode: 'cors'
-            });
-            ttdata = await getTtdata.json();
-          } catch (e) {
-          // alert
-            console.log(e);
-          }
-          return ttdata;
-        };
-        ttdata = await GetTtdataAsync();
-        console.log(ttdata.ttdata);
-        sessionStorage.setItem('jikanwari', ttdata);
+        if (sessionStorage.getItem('jikanwari')) {
+          ttdata = sessionStorage.getItem('jikanwari');
+        } else {
+          const GetTtdataAsync = async() => {
+            try {
+              const getTtdata = await fetch(`https://cshm50yn8b.execute-api.ap-northeast-1.amazonaws.com/prod?userId=${userId}`, {
+                mode: 'cors'
+              });
+              ttdata = await getTtdata.json();
+            } catch (e) {
+              // alert
+              console.log(e);
+            }
+            return ttdata;
+          };
+          ttdata = (await GetTtdataAsync()).ttdata;
+          sessionStorage.setItem('jikanwari', ttdata);
+        }
+        console.log(ttdata);
 
-        if (ttdata === 'no') {
+        if (ttdata.ttdata === 'no') {
         // alert
           console.log('時間割が登録されていません。時間割登録フォームへ移動します。');
           this.$router.go('/registration');
@@ -135,6 +139,7 @@ export default {
               property = property[4];
               break;
           }
+          console.log(sendTt);
           this.jikanwari = sendTt;
           this.property = property;
         }
