@@ -54,6 +54,23 @@ export default {
   },
   mounted() {
     // eslint-disable-next-line no-undef
+    liff
+      .init({
+        liffId: '1653817317-4d9a9bwY' // use own liffId
+      })
+      .then(() => {
+        // eslint-disable-next-line no-undef
+        if (!liff.isLoggedIn()) {
+          // eslint-disable-next-line no-undef
+          liff.login();
+        }
+      })
+      .catch((err) => {
+        // Error happens during initialization
+        console.log(err.code, err.message);
+        alert('エラーが発生しました');
+      });
+    /*
     liff.getProfile().then(async(profile) => {
       const userId = profile.userId;
       this.userId = userId;
@@ -118,7 +135,7 @@ export default {
       }
     }).catch((err) => {
       console.log('error', err);
-    });
+    }); */
   }
 };
 </script>
