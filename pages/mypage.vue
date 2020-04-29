@@ -71,6 +71,7 @@ export default {
             return res.data
           } catch (error) {
             alert('エラーが発生しました')
+            console.log(error)
             return error.response.data
           }
         }
