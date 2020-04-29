@@ -177,8 +177,8 @@ export default {
                   sendTt = ttdata.fri;
                   break;
               }
-              console.log(sendTt.replace(/\n/g, '<br/>'));
-              this.jikanwari = sendTt;
+              console.log(sendTt);
+              this.jikanwari = sendTt.replace(/\n/g, '<br/>');
             }
           }).catch((err) => {
             console.log('error', err);
