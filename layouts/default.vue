@@ -10,6 +10,14 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
+        <v-list-item href="https://line.me/R/ti/p/%40ywg0561x">
+          <v-list-item-action>
+            <v-icon>mdi-account-plus</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>LINEBot</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -40,6 +48,21 @@ export default {
           icon: 'mdi-home',
           title: 'Home',
           to: '/'
+        },
+        {
+          icon: 'mdi-table',
+          title: '時間割表',
+          to: '/table'
+        },
+        {
+          icon: 'mdi-plus-thick',
+          title: '時間割登録',
+          to: '/registration'
+        },
+        {
+          icon: 'mdi-account',
+          title: 'マイページ',
+          to: '/mypage'
         },
         {
           icon: 'mdi-chart-bubble',
