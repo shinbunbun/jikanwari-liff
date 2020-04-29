@@ -19,6 +19,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <div class="text-right">a</div>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
@@ -69,7 +70,7 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
-    }
+    };
   }
-}
+};
 </script>

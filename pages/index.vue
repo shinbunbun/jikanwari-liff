@@ -145,8 +145,6 @@ export default {
           this.jikanwari = sendTt;
           this.property = property;
         } else {
-          let property = ttdata.property;
-          property = property.split(',');
           switch (dayOfWeekStr) {
             case '日':
               sendTt = '今日の時間割はありません';
@@ -172,7 +170,6 @@ export default {
           }
           console.log(sendTt);
           this.jikanwari = sendTt;
-          this.property = property;
         }
       }).catch((err) => {
         console.log('error', err);
