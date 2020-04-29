@@ -22,17 +22,15 @@
               </tr>
             </thead>
             <tbody>
-              <div v-for="n in 8" :key="n">
-                <tr>
-                  <td>{{ n-1 }}</td>
-                  <td :id="`mon${n-1}`">none</td>
-                  <td :id="`tue${n-1}`">none</td>
-                  <td :id="`wed${n-1}`">none</td>
-                  <td :id="`thu${n-1}`">none</td>
-                  <td :id="`fri${n-1}`">none</td>
-                  <td :id="`sat${n-1}`">none</td>
-                </tr>
-              </div>
+              <tr v-for="n in 8" :key="n">
+                <td>{{ n-1 }}</td>
+                <td :id="`mon${n-1}`">none</td>
+                <td :id="`tue${n-1}`">none</td>
+                <td :id="`wed${n-1}`">none</td>
+                <td :id="`thu${n-1}`">none</td>
+                <td :id="`fri${n-1}`">none</td>
+                <td :id="`sat${n-1}`">none</td>
+              </tr>
             </tbody>
           </template>
         </v-simple-table>
