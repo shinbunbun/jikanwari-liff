@@ -97,18 +97,20 @@ export default {
         }
         console.log(ttdata);
 
-        if (ttdata.ttdata === 'no') {
+        if (ttdata === 'no') {
         // alert
           console.log('時間割が登録されていません。時間割登録フォームへ移動します。');
           this.$router.go('/registration');
         }
         let sendTt;
+
+        const date = new Date();
+        const dayOfWeek = date.getDay();
+        const dayOfWeekStr = ['日', '月', '火', '水', '木', '金', '土'][dayOfWeek];
+
         if (ttdata.property) {
           let property = ttdata.property;
           property = property.split(',');
-          const date = new Date();
-          const dayOfWeek = date.getDay();
-          const dayOfWeekStr = ['日', '月', '火', '水', '木', '金', '土'][dayOfWeek];
           switch (dayOfWeekStr) {
             case '日':
               sendTt = '今日の時間割はありません';
@@ -137,6 +139,35 @@ export default {
             case '金':
               sendTt = ttdata.fri;
               property = property[4];
+              break;
+          }
+          console.log(sendTt);
+          this.jikanwari = sendTt;
+          this.property = property;
+        } else {
+          let property = ttdata.property;
+          property = property.split(',');
+          switch (dayOfWeekStr) {
+            case '日':
+              sendTt = '今日の時間割はありません';
+              break;
+            case '土':
+              sendTt = ttdata.sat;
+              break;
+            case '月':
+              sendTt = ttdata.mon;
+              break;
+            case '火':
+              sendTt = ttdata.tue;
+              break;
+            case '水':
+              sendTt = ttdata.wed;
+              break;
+            case '木':
+              sendTt = ttdata.thu;
+              break;
+            case '金':
+              sendTt = ttdata.fri;
               break;
           }
           console.log(sendTt);
