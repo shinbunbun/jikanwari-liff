@@ -173,7 +173,7 @@ export default {
                   sendTt = ttdata.fri;
                   break;
               }
-              console.log(sendTt);
+              console.log(sendTt.split('\n'));
               this.jikanwari = sendTt;
             }
           }).catch((err) => {
