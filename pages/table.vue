@@ -24,13 +24,13 @@
             <tbody>
               <div v-for="n in 8" :key="n">
                 <tr>
-                  <td>{{ n }}</td>
-                  <td :id="`mon${n}`" />
-                  <td :id="`tue${n}`" />
-                  <td :id="`wed${n}`" />
-                  <td :id="`thu${n}`" />
-                  <td :id="`fri${n}`" />
-                  <td :id="`sat${n}`" />
+                  <td>{{ n-1 }}</td>
+                  <td :id="`mon${n-1}`" />
+                  <td :id="`tue${n-1}`" />
+                  <td :id="`wed${n-1}`" />
+                  <td :id="`thu${n-1}`" />
+                  <td :id="`fri${n-1}`" />
+                  <td :id="`sat${n-1}`" />
                 </tr>
               </div>
             </tbody>
@@ -49,6 +49,7 @@ export default {
   },
   mounted() {
     const ttdata = this.$store.state.ttdata;
+    console.log(ttdata);
 
     const mon = ttdata.mon;
     const tue = ttdata.tue;
