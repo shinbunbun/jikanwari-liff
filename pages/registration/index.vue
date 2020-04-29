@@ -27,7 +27,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}0`"
-                    :value="`${item.a}`"
+                    v-model="item.a"
                     type="text"
                     class="form-control"
                     placeholder="0限"
@@ -38,7 +38,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}1`"
-                    :value="`${item.b}`"
+                    v-model="item.b"
                     type="text"
                     class="form-control"
                     placeholder="1限"
@@ -49,7 +49,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}2`"
-                    :value="`${item.c}`"
+                    v-model="item.c"
                     type="text"
                     class="form-control"
                     placeholder="2限"
@@ -63,7 +63,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}3`"
-                    :value="`${item.d}`"
+                    v-model="item.d"
                     type="text"
                     class="form-control"
                     placeholder="3限"
@@ -74,7 +74,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}4`"
-                    :value="`${item.e}`"
+                    v-model="item.e"
                     type="text"
                     class="form-control"
                     placeholder="4限"
@@ -85,7 +85,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}5`"
-                    :value="`${item.f}`"
+                    v-model="item.f"
                     type="text"
                     class="form-control"
                     placeholder="5限"
@@ -99,7 +99,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}6`"
-                    :value="`${item.g}`"
+                    v-model="item.g"
                     type="text"
                     class="form-control"
                     placeholder="6限"
@@ -110,7 +110,7 @@
                 <v-col cols="4">
                   <v-text-field
                     :id="`${item.dayOfWeek}7`"
-                    :value="`${item.h}`"
+                    v-model="item.h"
                     type="text"
                     class="form-control"
                     placeholder="7限"
@@ -123,7 +123,7 @@
                 <v-col>
                   <v-textarea
                     id="monproperty"
-                    :value="`${item.g}`"
+                    v-model="item.g"
                     cols="4"
                     class="form-control"
                     placeholder="持ち物"
