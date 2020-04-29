@@ -222,7 +222,7 @@ export default {
       }))
         .then((res) => {
           window.onbeforeunload = null
-          location.href = './complete.html'
+          this.$router.push('/registration/complete')
         }).catch((err) => {
           alert(err)
         })
