@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 /* eslint-disable no-undef */
 export default {
   components: {
@@ -51,63 +52,63 @@ export default {
       trainName: '',
       postalCode: '',
       jikanwariNotify: ''
-    }
+    };
   },
   mounted() {
     liff.getProfile()
       .then(async (profile) => {
-        this.displayName = profile.displayName
-        this.userId = profile.userId
-        this.pictureUrl = profile.pictureUrl
+        this.displayName = profile.displayName;
+        this.userId = profile.userId;
+        this.pictureUrl = profile.pictureUrl;
 
-        const userId = profile.userId
+        const userId = profile.userId;
 
         const main = async () => {
           try {
             const res = await axios.request({
               method: 'GET',
               baseURL: `https://cshm50yn8b.execute-api.ap-northeast-1.amazonaws.com/prod/?userId=${userId}`
-            })
-            return res.data
+            });
+            return res.data;
           } catch (error) {
-            alert('エラーが発生しました')
-            console.log(error)
-            return error.response.data
+            alert('エラーが発生しました');
+            console.log(error);
+            return error.response.data;
           }
-        }
-        const res = (await main()).ttdata
-        console.log(res)
+        };
+        const res = (await main()).ttdata;
+        console.log(res);
         if (res.ttdata === 'no') {
-          alert('時間割登録を完了させて下さい')
+          alert('時間割登録を完了させて下さい');
         } else if (res.premium) {
-          this.memberStatus = 'プレミアム会員'
-          this.premiumPeriod = res.premiumPeriod
+          this.memberStatus = 'プレミアム会員';
+          this.premiumPeriod = res.premiumPeriod;
 
           if (res.train) {
-            this.trainName = res.train
+            this.trainName = res.train;
           } else {
-            this.trainName = '路線未登録'
+            this.trainName = '路線未登録';
           }
 
           if (res.postalCode) {
-            this.postalCode = res.postalCode
+            this.postalCode = res.postalCode;
           } else {
-            this.postalCode = '地域未登録'
+            this.postalCode = '地域未登録';
           }
 
           if (res.flag && res.flag !== '25') {
-            this.jikanwariNotify = `${res.flag}:00`
+            this.jikanwariNotify = `${res.flag}:00`;
           } else {
-            this.jikanwariNotify = '時間割お知らせ機能未登録'
+            this.jikanwariNotify = '時間割お知らせ機能未登録';
           }
         } else {
-          this.memberStatus = '一般会員'
+          this.memberStatus = '一般会員';
         }
 
-        this.isLoading = false
-      })
+        this.isLoading = false;
+      });
   }
-}
+};
 </script>
 
 <style scoped>
