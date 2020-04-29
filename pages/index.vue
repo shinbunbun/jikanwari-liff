@@ -70,6 +70,7 @@ export default {
         return ttdata;
       };
       ttdata = await GetTtdataAsync().ttdata;
+      console.log(ttdata);
       sessionStorage.setItem('jikanwari', ttdata);
 
       if (ttdata === 'no') {
