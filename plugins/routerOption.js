@@ -2,7 +2,7 @@
 export default ({
   app
 }) => {
-  app.router.beforeEach((to, from, next) => {
+  app.router.afterEach((to, from, next) => {
     try {
       liff.isLoggedIn();
     } catch (e) {
