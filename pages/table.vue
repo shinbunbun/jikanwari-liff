@@ -1,4 +1,5 @@
 <template>
+  <!--eslint-disable vue/html-self-closing -->
   <v-container column justify-center align-center>
     <v-row class="text-center">
       <v-col>
@@ -24,12 +25,12 @@
             <tbody>
               <tr v-for="n in 8" :key="n">
                 <td>{{ n-1 }}</td>
-                <td :id="`mon${n-1}`">none</td>
-                <td :id="`tue${n-1}`">none</td>
-                <td :id="`wed${n-1}`">none</td>
-                <td :id="`thu${n-1}`">none</td>
-                <td :id="`fri${n-1}`">none</td>
-                <td :id="`sat${n-1}`">none</td>
+                <td :id="`mon${n-1}`"></td>
+                <td :id="`tue${n-1}`"></td>
+                <td :id="`wed${n-1}`"></td>
+                <td :id="`thu${n-1}`"></td>
+                <td :id="`fri${n-1}`"></td>
+                <td :id="`sat${n-1}`"></td>
               </tr>
             </tbody>
           </template>
