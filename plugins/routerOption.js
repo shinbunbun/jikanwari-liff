@@ -9,6 +9,5 @@ export default ({
       console.log(e);
       next('/');
     }
-    next();
   });
 };
