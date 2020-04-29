@@ -78,7 +78,7 @@ export default {
         this.userId = userId;
         let ttdata;
         if (sessionStorage.getItem('jikanwari')) {
-          ttdata = sessionStorage.getItem('jikanwari');
+          ttdata = JSON.parse(sessionStorage.getItem('jikanwari'));
         } else {
           const GetTtdataAsync = async() => {
             let res;
@@ -96,7 +96,7 @@ export default {
           const data = await GetTtdataAsync();
           console.log(data);
           ttdata = data.ttdata;
-          sessionStorage.setItem('jikanwari', ttdata);
+          sessionStorage.setItem('jikanwari', JSON.stringify(ttdata));
         }
         console.dir(ttdata);
 
