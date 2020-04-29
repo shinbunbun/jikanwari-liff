@@ -25,12 +25,12 @@
               <div v-for="n in 8" :key="n">
                 <tr>
                   <td>{{ n-1 }}</td>
-                  <td :id="`mon${n-1}`" />
-                  <td :id="`tue${n-1}`" />
-                  <td :id="`wed${n-1}`" />
-                  <td :id="`thu${n-1}`" />
-                  <td :id="`fri${n-1}`" />
-                  <td :id="`sat${n-1}`" />
+                  <td :id="`mon${n-1}`">none</td>
+                  <td :id="`tue${n-1}`">none</td>
+                  <td :id="`wed${n-1}`">none</td>
+                  <td :id="`thu${n-1}`">none</td>
+                  <td :id="`fri${n-1}`">none</td>
+                  <td :id="`sat${n-1}`">none</td>
                 </tr>
               </div>
             </tbody>
@@ -76,10 +76,7 @@ export default {
         // mondayObject[value.slice(0, 1)] = value.slice(2);
         if (value !== 'ありません' && value !== null) {
           document.getElementById(`mon${value.slice(0, 1)}`)
-            .value = value.slice(2);
-        } else {
-          document.getElementById(`mon${value.slice(0, 1)}`)
-            .textContent = 'ありません';
+            .textContent = value.slice(2);
         }
         // counter++;
       } catch (e) {
@@ -91,7 +88,7 @@ export default {
         if (value !== 'ありません' && value !== null) {
           document.getElementById(
                                                         `tue${value.slice(0, 1)}`)
-            .value = value.slice(2);
+            .textContent = value.slice(2);
         }
       } catch (e) {
         // alert
@@ -103,7 +100,7 @@ export default {
         if (value !== 'ありません' && value !== null) {
           document.getElementById(
                                                         `wed${value.slice(0, 1)}`)
-            .value = value.slice(2);
+            .textContent = value.slice(2);
         }
       } catch (e) {
         // alert
@@ -115,7 +112,7 @@ export default {
         if (value !== 'ありません' && value !== null) {
           document.getElementById(
                                                         `thu${value.slice(0, 1)}`)
-            .value = value.slice(2);
+            .textContent = value.slice(2);
         }
       } catch (e) {
         // alert
@@ -127,7 +124,7 @@ export default {
         if (value !== 'ありません' && value !== null) {
           document.getElementById(
                                                         `fri${value.slice(0, 1)}`)
-            .value = value.slice(2);
+            .textContent = value.slice(2);
         }
       } catch (e) {
         // alert
@@ -139,7 +136,7 @@ export default {
         if (value !== 'ありません' && value !== null) {
           document.getElementById(
                                                         `sat${value.slice(0, 1)}`)
-            .value = value.slice(2);
+            .textContent = value.slice(2);
         }
       } catch (e) {
         // alert
