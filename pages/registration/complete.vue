@@ -27,6 +27,7 @@ export default {
   },
   mounted() {
     this.$store.state.jikanwari = '';
+    this.$store.commit('updateLoading', false);
   }
 };
 </script>

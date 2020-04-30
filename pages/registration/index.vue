@@ -243,6 +243,7 @@ export default {
       subjects.push(newSubject);
     },
     submit () {
+      this.$store.commit('updateLoading', true);
       // eslint-disable-next-line no-undef
       liff.getProfile()
         .then((profile) => {
