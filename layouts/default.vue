@@ -1,5 +1,9 @@
 <template>
   <v-app>
+    <div v-if="this.$store.getters.isLoading" id="loading">
+      <v-progress-circular :size="70" :width="7" color="primary" indeterminate />
+    </div>
+
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
@@ -73,3 +77,16 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  background-color: rgba(#000, 0.5);
+}
+</style>

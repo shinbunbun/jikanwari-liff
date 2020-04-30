@@ -180,8 +180,10 @@ export default {
               console.log(sendTt);
               this.jikanwari = sendTt.replace(/\n/g, '<br/>');
             }
+            this.$store.commit('updateLoading', false);
           }).catch((err) => {
             console.log('error', err);
+            this.$store.commit('updateLoading', false);
           });
         }
       })
@@ -189,6 +191,7 @@ export default {
         // Error happens during initialization
         console.log(err.code, err.message);
         alert('エラーが発生しました');
+        this.$store.commit('updateLoading', false);
       });
   }
 };
