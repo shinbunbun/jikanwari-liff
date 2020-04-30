@@ -90,3 +90,5 @@ sw.*
 *.swp
 localhost-key.pem
 localhost.pem
+config/.env.dev
+config/.env.prod

@@ -1,3 +1,5 @@
+import path from 'path';
+import fs from 'fs';
 import colors from 'vuetify/es5/util/colors';
 
 export default {
@@ -62,7 +64,13 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    [
+      '@nuxtjs/dotenv',
+      {
+        filename: process.env.NODE_ENV !== 'production' ? './config/.env.dev' : './config/.env.prod'
+      }
+    ]
   ],
   /*
    ** Axios module configuration
@@ -98,5 +106,13 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  server: {
+    port: 3000,
+    host: 'localhost',
+    https: {
+      key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
+      cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem'))
+    }
   }
 };

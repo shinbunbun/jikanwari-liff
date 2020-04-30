@@ -66,7 +66,7 @@ export default {
     // eslint-disable-next-line no-undef
     liff
       .init({
-        liffId: '1653817317-4d9a9bwY' // use own liffId
+        liffId: process.env.liffId // use own liffId
       })
       .then(() => {
         // eslint-disable-next-line no-undef
