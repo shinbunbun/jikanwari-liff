@@ -9,13 +9,12 @@ export default ({
       app.store.commit('updateLoading', true);
       next();
     } else {
-      try {
-        liff.isLoggedIn();
-      } catch (e) {
-        console.log(e);
-        location.href = '/';
+      console.log(liff.id);
+      if (!liff.id) {
+        next('/');
+      } else {
+        next();
       }
-      next();
     }
   });
 };
