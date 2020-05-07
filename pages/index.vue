@@ -207,7 +207,7 @@ export default {
       liff.shareTargetPicker([
         {
           type: 'text',
-          text: this.jikanwari
+          text: (this.jikanwari).replace(/<br\/>/g, '\n')
         }
       ])
         .then(
