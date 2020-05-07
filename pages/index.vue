@@ -13,6 +13,11 @@
             <v-card-title class="headline justify-center">持ち物</v-card-title>
             <v-card-text style="font-size: 20px; color: rgba(0, 0, 0, 0.87);">{{ property }}</v-card-text>
           </div>
+          <v-row>
+            <v-col>
+              <v-btn color="primary" x-large width="140px" @click="send">友達に送る</v-btn>
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
       <v-col />
@@ -151,7 +156,7 @@ export default {
                   break;
               }
               console.log(sendTt);
-              this.jikanwari = sendTt;
+              this.jikanwari = sendTt.replace(/\n/g, '<br/>');
               this.property = property;
             } else {
               switch (dayOfWeekStr) {
@@ -193,6 +198,26 @@ export default {
         alert('エラーが発生しました');
         this.$store.commit('updateLoading', false);
       });
+  },
+  methods: {
+    send() {
+      // eslint-disable-next-line no-undef
+      if (liff.isApiAvailable('shareTargetPicker')) {
+        // eslint-disable-next-line no-undef
+        liff.shareTargetPicker([
+          {
+            type: 'text',
+            text: this.jikanwari
+          }
+        ])
+          .then(
+          ).catch(function(res) {
+            alert('メッセージを送信できませんでした');
+          });
+      } else {
+        alert('このブラウザはメッセージの送信に非対応です。');
+      }
+    }
   }
 };
 </script>
