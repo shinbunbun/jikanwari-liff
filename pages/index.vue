@@ -30,7 +30,7 @@
             <v-btn nuxt to="/table" color="primary" x-large width="140px">時間割表</v-btn>
           </v-col>
           <v-col>
-            <v-btn nuxt to="/registration" color="primary" x-large width="140px">時間割登録</v-btn>
+            <v-btn nuxt to="/edit" color="primary" x-large width="140px">時間割編集</v-btn>
           </v-col>
         </v-row>
         <v-row>
@@ -85,12 +85,12 @@ export default {
             this.userId = userId;
             let ttdata;
 
-            console.log(this.$store.state.jikanwari);
+            // console.log(this.$store.state.jikanwari);
             if (this.$store.state.jikanwari) {
-              console.log(0);
+              // console.log(0);
               ttdata = this.$store.state.jikanwari;
             } else {
-              console.log(1);
+              // console.log(1);
               const GetTtdataAsync = async() => {
                 let res;
                 try {
@@ -109,7 +109,7 @@ export default {
               ttdata = data.ttdata;
               this.$store.state.jikanwari = ttdata;
             }
-            console.dir(ttdata);
+            // console.dir(ttdata);
 
             if (ttdata === 'no') {
               // alert
@@ -155,7 +155,7 @@ export default {
                   property = property[4];
                   break;
               }
-              console.log(sendTt);
+              // console.log(sendTt);
               this.jikanwari = sendTt.replace(/\n/g, '<br/>');
               this.property = property;
             } else {

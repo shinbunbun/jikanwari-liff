@@ -17,6 +17,9 @@ const mutations = {
 const getters = {
   isLoading: (state) => {
     return state.loading;
+  },
+  getJikanwari: (state) => {
+    return state.jikanwari;
   }
 };
 

@@ -56,13 +56,16 @@ export default {
   },
   mounted() {
     liff.getProfile()
-      .then(async (profile) => {
+      .then((profile) => {
         this.displayName = profile.displayName;
         this.userId = profile.userId;
         this.pictureUrl = profile.pictureUrl;
 
-        const userId = profile.userId;
+        const jikanwari = this.$store.getters.getJikanwari;
 
+        // const userId = profile.userId;
+
+        /*
         const main = async () => {
           try {
             const res = await axios.request({
@@ -76,28 +79,26 @@ export default {
             return error.response.data;
           }
         };
-        const res = (await main()).ttdata;
-        console.log(res);
-        if (res.ttdata === 'no') {
-          alert('時間割登録を完了させて下さい');
-        } else if (res.premium) {
+        const res = (await main()).ttdata; */
+        // console.log(res);
+        if (jikanwari.premium) {
           this.memberStatus = 'プレミアム会員';
-          this.premiumPeriod = res.premiumPeriod;
+          this.premiumPeriod = jikanwari.premiumPeriod;
 
-          if (res.train) {
-            this.trainName = res.train;
+          if (jikanwari.train) {
+            this.trainName = jikanwari.train;
           } else {
             this.trainName = '路線未登録';
           }
 
-          if (res.postalCode) {
-            this.postalCode = res.postalCode;
+          if (jikanwari.postalCode) {
+            this.postalCode = jikanwari.postalCode;
           } else {
             this.postalCode = '地域未登録';
           }
 
-          if (res.flag && res.flag !== '25') {
-            this.jikanwariNotify = `${res.flag}:00`;
+          if (jikanwari.flag && jikanwari.flag !== '25') {
+            this.jikanwariNotify = `${jikanwari.flag}:00`;
           } else {
             this.jikanwariNotify = '時間割お知らせ機能未登録';
           }

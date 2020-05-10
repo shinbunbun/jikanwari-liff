@@ -26,7 +26,11 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>時間割bot</v-toolbar-title>
+      <v-toolbar-title>
+        <nuxt-link to="/">
+          <img src="~static/image/logo.png" style="width: 100px" />
+        </nuxt-link>
+      </v-toolbar-title>
       <v-spacer />
     </v-app-bar>
     <v-content>
@@ -64,10 +68,20 @@ export default {
           to: '/registration'
         },
         {
+          icon: 'mdi-pencil',
+          title: '時間割編集',
+          to: '/edit'
+        },
+        {
           icon: 'mdi-account',
           title: 'マイページ',
           to: '/mypage'
-        }
+        }/*,
+        {
+          icon: 'mdi-home',
+          title: 'HomePage',
+          to: '/homepage'
+        } */
       ],
       miniVariant: false,
       right: true,

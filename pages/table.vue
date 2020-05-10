@@ -48,7 +48,7 @@ export default {
   },
   mounted() {
     const jikanwari = this.$store.state.jikanwari;
-    console.log(jikanwari);
+    // console.log(jikanwari);
 
     const mon = jikanwari.mon;
     const tue = jikanwari.tue;
@@ -57,7 +57,7 @@ export default {
     const fri = jikanwari.fri;
     const sat = jikanwari.sat;
     /// /alert
-    console.log(3);
+    // console.log(3);
     const monday = (mon.split(/\n/)).slice(1);
     const tuesday = (tue.split(/\n/)).slice(1);
     const wednesday = (wed.split(/\n/)).slice(1);
@@ -65,10 +65,10 @@ export default {
     const friday = (fri.split(/\n/)).slice(1);
     const saturday = (sat.split(/\n/)).slice(1);
 
-    console.log(monday);
+    // console.log(monday);
 
     monday.map((value) => {
-      console.log(value);
+      // console.log(value);
       try {
         /// /alert
         // console.log(counter);
