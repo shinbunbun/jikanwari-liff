@@ -10,7 +10,8 @@ export default {
   head: {
     // titleTemplate: '%s - ' + process.env.npm_package_name,
     title: '時間割bot', // process.env.npm_package_name || '',
-    meta: [{
+    meta: [ //
+      {
         charset: 'utf-8'
       },
       {
@@ -21,6 +22,36 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: '時間割bot'
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://jikanwari-bot.shinbunbun.info'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: '時間割bot'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: '時間割bot'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://jikanwari-liff-image.s3-ap-northeast-1.amazonaws.com/logo.png'
       }
     ],
     script: [{
@@ -45,7 +76,8 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{
+  plugins: [ //
+    {
       src: '~/plugins/routerOption.js',
       ssr: false
     },
