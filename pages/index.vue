@@ -26,6 +26,8 @@ export default {
     console.log(11);
     // eslint-disable-next-line no-undef
     if (liff.id) {
+      // eslint-disable-next-line no-undef
+      console.log(liff.id);
       this.isLoggedIn = true;
     } else {
       // eslint-disable-next-line no-undef
