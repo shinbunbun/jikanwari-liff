@@ -70,6 +70,7 @@ export default {
   mounted() {
     console.log(10);
     if (this.$route.path === '/login') {
+      console.log(22);
       // eslint-disable-next-line no-undef
       liff.login();
       this.$store.commit('updateLoading', false);
