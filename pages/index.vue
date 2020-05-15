@@ -36,9 +36,11 @@ export default {
         .then(() => {
         // eslint-disable-next-line no-undef
           if (liff.isLoggedIn()) {
+            console.log(20);
             this.isLoggedIn = true;
             this.$store.commit('updateIsLoggedIn', true);
           } else {
+            console.log(21);
             // eslint-disable-next-line no-undef
             this.isLoggedIn = false;
           }
