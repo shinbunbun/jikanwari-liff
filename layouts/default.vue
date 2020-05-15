@@ -22,6 +22,14 @@
             <v-list-item-title>LINEBot</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item to="/pvy" router exact>
+          <v-list-item-action>
+            <v-icon>mdi-account-lock</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>プライバシーポリシー</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -79,7 +87,8 @@ export default {
           icon: 'mdi-account',
           title: 'マイページ',
           to: '/mypage'
-        }/*,
+        }
+        /*,
         {
           icon: 'mdi-home',
           title: 'HomePage',
