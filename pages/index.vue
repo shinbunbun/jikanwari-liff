@@ -23,6 +23,7 @@ export default {
     };
   },
   mounted() {
+    this.$store.commit('updateLoading', true);
     console.log(11);
     // eslint-disable-next-line no-undef
     if (liff.id) {
@@ -46,6 +47,7 @@ export default {
             // eslint-disable-next-line no-undef
             this.isLoggedIn = false;
           }
+          this.$store.commit('updateLoading', false);
         })
         .catch((err) => {
         // Error happens during initialization

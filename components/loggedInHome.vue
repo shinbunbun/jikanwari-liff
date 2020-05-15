@@ -183,6 +183,10 @@ export default {
         console.log(sendTt);
         this.jikanwari = sendTt.replace(/\n/g, '<br/>');
       }
+      if (localStorage.path) {
+        this.$router.push(localStorage.path);
+        localStorage.removeItem('path');
+      }
       this.$store.commit('updateLoading', false);
     }).catch((err) => {
       console.log('error', err);

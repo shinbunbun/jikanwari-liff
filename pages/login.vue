@@ -8,6 +8,8 @@ import LoggedInHome from '../components/loggedInHome';
 export default {
   components: {
     LoggedInHome
+  },
+  mounted() {
   }
 };
 </script>

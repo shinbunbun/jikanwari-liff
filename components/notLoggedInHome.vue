@@ -7,7 +7,7 @@
     </v-row>
     <v-row class="text-center">
       <v-col>
-        <p>
+        <p style="font-size: 90%">
           時間割表をなくしたことがありますか？
           <br />時間割表を覚えるのがめんどうくさいですか？
           <br />今日が何曜日か一瞬で思い浮かばないですか？
