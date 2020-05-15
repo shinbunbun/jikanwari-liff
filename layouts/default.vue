@@ -46,11 +46,31 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer :fixed="fixed" app>
-      <span>
-        &copy; {{ new Date().getFullYear() }}
-        <a href="https://shinbunbun.info/">しんぶんぶん</a>
-      </span>
+    <!--<v-footer :fixed="fixed" app>-->
+    <v-footer absolute app>
+      <v-row>
+        <v-col />
+        <v-col style="text-align: center">
+          <div>
+            &copy; {{ new Date().getFullYear() }}
+            しんぶんぶん
+          </div>
+          <div>
+            <ul>
+              <li>
+                <nuxt-link to="/pvy">プライバシーポリシー</nuxt-link>
+              </li>
+              <li>
+                <a href="https://github.com/shinbunbun/jikanwari-liff" target="blank">GitHub</a>
+              </li>
+              <li>
+                <a href="https://lin.ee/fJTaaga" target="blank">お問い合わせ</a>
+              </li>
+            </ul>
+          </div>
+        </v-col>
+        <v-col />
+      </v-row>
     </v-footer>
   </v-app>
 </template>
@@ -114,5 +134,11 @@ export default {
   z-index: 9999;
   position: fixed;
   background-color: rgba(#000, 0.5);
+}
+</style>
+
+<style scoped>
+li {
+  display: inline-block;
 }
 </style>
