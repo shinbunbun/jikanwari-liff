@@ -39,7 +39,10 @@
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>
+        &copy; {{ new Date().getFullYear() }}
+        <a href="https://shinbunbun.info/">しんぶんぶん</a>
+      </span>
     </v-footer>
   </v-app>
 </template>
