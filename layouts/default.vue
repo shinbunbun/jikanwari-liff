@@ -49,8 +49,8 @@
     <!--<v-footer :fixed="fixed" app>-->
     <v-footer absolute app>
       <v-row>
-        <v-col />
-        <v-col style="text-align: center">
+        <v-col style="padding: 0" />
+        <v-col cols="12" md="8" style="text-align: center">
           <div>
             &copy; {{ new Date().getFullYear() }}
             しんぶんぶん
@@ -69,7 +69,7 @@
             </ul>
           </div>
         </v-col>
-        <v-col />
+        <v-col style="padding: 0" />
       </v-row>
     </v-footer>
   </v-app>
