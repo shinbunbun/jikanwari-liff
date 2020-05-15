@@ -68,6 +68,7 @@ export default {
     };
   },
   mounted() {
+    this.$store.commit('updateLoading', true);
     console.log(10);
     if (this.$route.path === '/login') {
       console.log(22);
