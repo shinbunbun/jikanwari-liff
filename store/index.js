@@ -2,7 +2,7 @@ import Vuex from 'vuex';
 
 const state = () => ({
   jikanwari: '',
-  loading: true,
+  loading: false,
   isLoggedIn: false
 });
 
