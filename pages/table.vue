@@ -150,4 +150,10 @@ export default {
 v-btn {
   font-size: 30px;
 }
+
+.v-data-table td,
+.v-data-table th {
+  padding: 0;
+  max-width: 50px;
+}
 </style>
