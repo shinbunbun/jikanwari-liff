@@ -2,7 +2,8 @@ import Vuex from 'vuex';
 
 const state = () => ({
   jikanwari: '',
-  loading: true
+  loading: true,
+  isLoggedIn: false
 });
 
 const mutations = {
@@ -11,6 +12,9 @@ const mutations = {
   },
   updateLoading(state, value) {
     state.loading = value;
+  },
+  updateIsLoggedIn(state, value) {
+    state.isLoggedIn = value;
   }
 };
 
@@ -20,6 +24,9 @@ const getters = {
   },
   getJikanwari: (state) => {
     return state.jikanwari;
+  },
+  getIsLoggedIn: (state) => {
+    return state.isLoggedIn;
   }
 };
 

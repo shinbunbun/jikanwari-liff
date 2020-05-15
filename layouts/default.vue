@@ -6,14 +6,24 @@
 
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
       <v-list>
-        <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
+        <v-list-item to="/" router exact>
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>mdi-home</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title>ホーム</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <div v-if="$store.getters.getIsLoggedIn">
+          <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title" />
+            </v-list-item-content>
+          </v-list-item>
+        </div>
         <v-list-item href="https://line.me/R/ti/p/%40ywg0561x" target="_blank">
           <v-list-item-action>
             <v-icon>mdi-account-plus</v-icon>
@@ -84,11 +94,6 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-home',
-          title: 'Home',
-          to: '/'
-        },
-        {
           icon: 'mdi-table',
           title: '時間割表',
           to: '/table'
@@ -108,12 +113,6 @@ export default {
           title: 'マイページ',
           to: '/mypage'
         }
-        /*,
-        {
-          icon: 'mdi-home',
-          title: 'HomePage',
-          to: '/homepage'
-        } */
       ],
       miniVariant: false,
       right: true,
