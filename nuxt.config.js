@@ -51,7 +51,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '~static/image/ogp.jpg'
+        content: '/image/ogp.jpg'
       }
     ],
     script: [{
