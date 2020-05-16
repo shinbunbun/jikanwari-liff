@@ -68,6 +68,10 @@ export default {
     };
   },
   mounted() {
+    // eslint-disable-next-line no-undef
+    addToHomescreen({
+      lifespan: 0
+    });
     this.$store.commit('updateLoading', true);
     console.log(10);
     if (this.$route.path === '/login') {
