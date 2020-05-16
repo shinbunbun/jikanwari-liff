@@ -57,8 +57,6 @@
 
 <script>
 
-import AddToHomeScreen from 'a2hs.js';
-
 export default {
   components: {
   },
@@ -70,7 +68,6 @@ export default {
     };
   },
   mounted() {
-    AddToHomeScreen();
     this.$store.commit('updateLoading', true);
     console.log(10);
     if (this.$route.path === '/login') {
