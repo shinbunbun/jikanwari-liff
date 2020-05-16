@@ -52,6 +52,11 @@ export default {
         hid: 'og:image',
         property: 'og:image',
         content: 'https://jikanwari-bot.shinbunbun.info/image/ogp.jpg'
+      },
+      {
+        hid: 'fb:app_id',
+        property: 'fb:app_id',
+        content: '2878112042257855'
       }
     ],
     script: [{
