@@ -51,7 +51,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://jikanwari-liff-image.s3-ap-northeast-1.amazonaws.com/logo.png'
+        content: '~static/image/ogp.jpg'
       }
     ],
     script: [{
