@@ -154,5 +154,15 @@ export default {
       key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
       cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem'))
     }
-  }
+  },
+  /* minify */
+  collapseBooleanAttributes: true,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  processConditionalComments: true,
+  removeEmptyAttributes: true,
+  removeRedundantAttributes: true,
+  trimCustomFragments: true,
+  useShortDoctype: true
 };
