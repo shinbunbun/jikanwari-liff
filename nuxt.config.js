@@ -110,7 +110,8 @@ export default {
       {
         filename: process.env.NODE_ENV === 'development' ? './config/.env.dev' : './config/.env.prod'
       }
-    ]
+    ],
+    'nuxt-purgecss'
   ],
   /*
    ** Axios module configuration
