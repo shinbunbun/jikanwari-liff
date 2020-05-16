@@ -51,7 +51,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/image/ogp.jpg'
+        content: 'https://jikanwari-bot.shinbunbun.info/image/ogp.jpg'
       }
     ],
     script: [{
