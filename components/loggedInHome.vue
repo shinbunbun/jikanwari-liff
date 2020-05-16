@@ -5,10 +5,7 @@
       <v-col cols="12" sm="6" md="3" class="text-center">
         <v-card>
           <v-card-title class="headline justify-center">今日の時間割</v-card-title>
-          <v-card-text
-            style="font-size: 20px; color: rgba(0, 0, 0, 0.87);"
-            v-html="$sanitize(jikanwari)"
-          />
+          <v-card-text style="font-size: 20px; color: rgba(0, 0, 0, 0.87);" v-html="jikanwari" />
           <div v-if="property">
             <v-card-title class="headline justify-center">持ち物</v-card-title>
             <v-card-text style="font-size: 20px; color: rgba(0, 0, 0, 0.87);">{{ property }}</v-card-text>
@@ -155,7 +152,7 @@ export default {
             break;
         }
         // console.log(sendTt);
-        this.jikanwari = sendTt.replace(/\n/g, '<br/>');
+        this.jikanwari = sendTt.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/`/g, '&#x60;').replace(/\r?\n/g, '<br />');
         this.property = property;
       } else {
         switch (dayOfWeekStr) {

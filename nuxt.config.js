@@ -85,8 +85,7 @@ export default {
     {
       src: '~/plugins/routerOption.js',
       ssr: false
-    },
-    '~/plugins/sanitize-html'
+    }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -145,7 +144,8 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    analyze: true
   },
   server: {
     port: 3000,
