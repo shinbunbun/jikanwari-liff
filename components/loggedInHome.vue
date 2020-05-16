@@ -197,21 +197,21 @@ export default {
   methods: {
     send() {
       // eslint-disable-next-line no-undef
-      // if (liff.isApiAvailable('shareTargetPicker')) {
+      if (liff.isApiAvailable('shareTargetPicker')) {
       // eslint-disable-next-line no-undef
-      liff.shareTargetPicker([
-        {
-          type: 'text',
-          text: (this.jikanwari).replace(/<br\/>/g, '\n')
-        }
-      ])
-        .then(
-        ).catch(function(res) {
-          alert('メッセージを送信できませんでした');
-        });
-      /* } else {
+        liff.shareTargetPicker([
+          {
+            type: 'text',
+            text: (this.jikanwari).replace(/<br\/>/g, '\n')
+          }
+        ])
+          .then(
+          ).catch(function(res) {
+            alert('メッセージを送信できませんでした');
+          });
+      } else {
         alert('このブラウザはメッセージの送信に非対応です。');
-      } */
+      }
     }
   }
 };
