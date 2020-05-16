@@ -103,15 +103,14 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage //
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     [
       '@nuxtjs/dotenv',
       {
         filename: process.env.NODE_ENV === 'development' ? './config/.env.dev' : './config/.env.prod'
       }
-    ],
-    'nuxt-purgecss'
+    ]
   ],
   /*
    ** Axios module configuration
