@@ -20,7 +20,8 @@
     </v-row>
     <v-row>
       <v-col class="text-center video">
-        <video muted src="~static/video/top.mp4" autoplay loop style="max-width: 100%" />
+        <!-- eslint-disable-next-line vue/max-attributes-per-line-->
+        <video src="~static/video/top.mp4" autoplay muted playsinline loop style="max-width: 100%" />
       </v-col>
     </v-row>
     <v-row>
@@ -39,6 +40,7 @@
       </v-col>
       <v-col md="2" class="text-center">
         <p>Webで使う</p>
+        <!--eslint-disable-next-line vue/max-attributes-per-line-->
         <v-btn nuxt to="/login" color="primary" x-large height="43" width="140">Web</v-btn>
       </v-col>
       <v-col cols="0" md="4" />
