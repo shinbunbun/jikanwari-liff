@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: 
+Disallow:
+Sitemap : https://jikanwari-bot.shinbunbun.info/sitemap.xml
