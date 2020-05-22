@@ -38,6 +38,9 @@ export default ({
         localStorage.setItem('path', '/mypage');
         next('/login');
         break;
+      case 'notifyComplete':
+        next('/notifyComplete');
+        break;
 
       default:
         break;
