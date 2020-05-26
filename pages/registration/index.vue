@@ -232,6 +232,11 @@ export default {
       userId: ''
     };
   },
+  mounted() {
+    if (localStorage.path) {
+      localStorage.removeItem('path');
+    }
+  },
   methods: {
     update (id) {
       console.log(id);
