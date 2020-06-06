@@ -275,7 +275,7 @@ export default {
             friday: fri,
             saturday: sat,
             flag: 0,
-            uuid,
+            uuid: `${uuid}hftd52`,
             property
 
           };

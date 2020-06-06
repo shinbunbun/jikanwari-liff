@@ -359,6 +359,7 @@ export default {
       subjects.push(newSubject);
     },
     submit () {
+      const jikanwari = this.$store.getters.getJikanwari;
       this.$store.commit('updateLoading', true);
       // eslint-disable-next-line no-undef
       liff.getProfile()
@@ -375,7 +376,7 @@ export default {
           const sat = [this.items[5].a, this.items[5].b, this.items[5].c, this.items[5].d, this.items[5].e, this.items[5].f, this.items[5].g, this.items[5].h];
           const property = `${this.items[0].property},${this.items[1].property},${this.items[2].property},${this.items[3].property},${this.items[4].property},${this.items[5].property},`;
 
-          const uuid = getUniqueStr(1000);
+          // const uuid = getUniqueStr(1000);
 
           const json = {
             userId,
@@ -386,7 +387,7 @@ export default {
             friday: fri,
             saturday: sat,
             flag: 0,
-            uuid,
+            uuid: jikanwari.uuid,
             property
 
           };
@@ -400,12 +401,12 @@ export default {
               alert(err);
             });
         });
-      function getUniqueStr (myStrong) {
+      /* function getUniqueStr (myStrong) {
         let strong = 1000;
         if (myStrong) { strong = myStrong; }
         return new Date().getTime().toString(16) + Math.floor(strong * Math.random())
           .toString(16);
-      }
+      } */
     }
   }
 };
