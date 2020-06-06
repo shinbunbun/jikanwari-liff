@@ -90,3 +90,4 @@ sw.*
 *.swp
 localhost-key.pem
 localhost.pem
+.contentful.json
