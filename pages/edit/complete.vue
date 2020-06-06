@@ -11,11 +11,20 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col />
       <v-col class="text-center">
         <v-btn nuxt to="/" color="primary" x-large width="140px">ホームに戻る</v-btn>
       </v-col>
-      <v-col />
+      <v-col>
+        <v-btn
+          href="https://line.me/R/ti/p/%40ywg0561x"
+          target="_blank"
+          color="#00b900"
+          x-large
+          width="140px"
+        >
+          <font color="white">LINEに戻る</font>
+        </v-btn>
+      </v-col>
     </v-row>
   </v-container>
 </template>
