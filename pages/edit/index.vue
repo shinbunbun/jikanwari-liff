@@ -269,7 +269,7 @@ export default {
         // console.log(counter);
         // mondayObject[value.slice(0, 1)] = value.slice(2);
         if (value !== 'ありません' && value !== null) {
-          const key = ['a', 'b', 'c', 'd', 'e', 'f'][parseInt(value.slice(0, 1), 10)];
+          const key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][parseInt(value.slice(0, 1), 10)];
           this.items[0][key] = value.slice(2);
         }
         // counter++;
@@ -280,7 +280,7 @@ export default {
     tuesday.map((value) => {
       try {
         if (value !== 'ありません' && value !== null) {
-          const key = ['a', 'b', 'c', 'd', 'e', 'f'][parseInt(value.slice(0, 1), 10)];
+          const key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][parseInt(value.slice(0, 1), 10)];
           this.items[1][key] = value.slice(2);
         }
       } catch (e) {
@@ -291,7 +291,7 @@ export default {
     wednesday.map((value) => {
       try {
         if (value !== 'ありません' && value !== null) {
-          const key = ['a', 'b', 'c', 'd', 'e', 'f'][parseInt(value.slice(0, 1), 10)];
+          const key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][parseInt(value.slice(0, 1), 10)];
           this.items[2][key] = value.slice(2);
         }
       } catch (e) {
@@ -302,7 +302,7 @@ export default {
     thursday.map((value) => {
       try {
         if (value !== 'ありません' && value !== null) {
-          const key = ['a', 'b', 'c', 'd', 'e', 'f'][parseInt(value.slice(0, 1), 10)];
+          const key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][parseInt(value.slice(0, 1), 10)];
           this.items[3][key] = value.slice(2);
         }
       } catch (e) {
@@ -313,7 +313,7 @@ export default {
     friday.map((value) => {
       try {
         if (value !== 'ありません' && value !== null) {
-          const key = ['a', 'b', 'c', 'd', 'e', 'f'][parseInt(value.slice(0, 1), 10)];
+          const key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][parseInt(value.slice(0, 1), 10)];
           this.items[4][key] = value.slice(2);
         }
       } catch (e) {
@@ -324,7 +324,7 @@ export default {
     saturday.map((value) => {
       try {
         if (value !== 'ありません' && value !== null) {
-          const key = ['a', 'b', 'c', 'd', 'e', 'f'][parseInt(value.slice(0, 1), 10)];
+          const key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][parseInt(value.slice(0, 1), 10)];
           this.items[5][key] = value.slice(2);
         }
       } catch (e) {
@@ -379,7 +379,8 @@ export default {
           // const uuid = getUniqueStr(1000);
 
           const json = {
-            userId,
+            // eslint-disable-next-line no-undef
+            idToken: liff.getIDToken(),
             monday: mon,
             tuesday: tue,
             wednesday: wed,

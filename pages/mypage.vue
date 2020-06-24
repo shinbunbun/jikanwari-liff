@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 /* eslint-disable no-undef */
 export default {
   components: {
@@ -63,24 +62,6 @@ export default {
 
         const jikanwari = this.$store.getters.getJikanwari;
 
-        // const userId = profile.userId;
-
-        /*
-        const main = async () => {
-          try {
-            const res = await axios.request({
-              method: 'GET',
-              baseURL: `https://cshm50yn8b.execute-api.ap-northeast-1.amazonaws.com/prod/?userId=${userId}`
-            });
-            return res.data;
-          } catch (error) {
-            alert('エラーが発生しました');
-            console.log(error);
-            return error.response.data;
-          }
-        };
-        const res = (await main()).ttdata; */
-        // console.log(res);
         if (jikanwari.premium) {
           this.memberStatus = 'プレミアム会員';
           this.premiumPeriod = jikanwari.premiumPeriod;
