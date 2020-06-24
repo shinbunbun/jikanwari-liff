@@ -380,7 +380,7 @@ export default {
 
           const json = {
             // eslint-disable-next-line no-undef
-            idToken: liff.getIDToken(),
+            userId,
             monday: mon,
             tuesday: tue,
             wednesday: wed,
