@@ -9,7 +9,7 @@ export default ({
     if (to.path === '/' || to.path === '/login') {
       console.log(12);
       next();
-    } else if (to.path === '/pvy' || to.path === '/help' || to.path === '/notifyComplete') {
+    } else if (to.path === '/pvy' || to.path === '/help' || to.path === '/notifyComplete' || to.path === '/update') {
       next();
     } else if (!liff.id) {
       // console.log(liff.id);
