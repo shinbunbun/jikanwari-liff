@@ -1,5 +1,11 @@
 # jikanwari-liff
 
+友達追加数3425人（2022/01/14現在）の学生向け時間割管理サービス（LINEBot）、時間割botのWebアプリケーション版のリポジトリです。
+
+LINEBot版のリポジトリ: https://github.com/shinbunbun/jikanwari-bot
+
+公式サイト: https://jikanwari-bot.shinbunbun.info/
+
 > My unreal Nuxt.js project
 
 ## Build Setup
