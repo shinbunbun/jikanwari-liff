@@ -25,20 +25,6 @@ export default {
   mounted() {
     this.$store.commit('updateLoading', true);
     console.log(11);
-    // eslint-disable-next-line no-undef
-    if (liff.id) {
-      // eslint-disable-next-line no-undef
-      console.log(liff.id);
-      // eslint-disable-next-line no-undef
-      if (liff.isLoggedIn()) {
-        this.isLoggedIn = true;
-        this.$store.commit('updateIsLoggedIn', true);
-      } else {
-        // eslint-disable-next-line no-undef
-        this.isLoggedIn = false;
-      }
-      this.$store.commit('updateLoading', false);
-    } else {
       // eslint-disable-next-line no-undef
       liff
         .init({
@@ -63,7 +49,6 @@ export default {
           alert('エラーが発生しました');
           this.$store.commit('updateLoading', false);
         });
-    }
   }
 };
 </script>

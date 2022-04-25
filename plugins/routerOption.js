@@ -6,17 +6,17 @@ export default ({
   app.router.beforeEach((to, from, next) => {
     const query = to.query;
     console.log(to.path);
-    if (to.path === '/' || to.path === '/login') {
+    /* if (to.path === '/' || to.path === '/login') {
       console.log(12);
+    } else  */if (to.path === '/pvy' || to.path === '/help' || to.path === '/notifyComplete' || to.path === '/update') {
       next();
-    } else if (to.path === '/pvy' || to.path === '/help' || to.path === '/notifyComplete' || to.path === '/update') {
-      next();
-    } else if (!liff.id) {
+      return;
+    }/*  else if (!liff.id) {
       // console.log(liff.id);
       next('/');
     } else {
       next();
-    }
+    } */
 
     switch (query.path) {
       case 'login':
@@ -43,6 +43,7 @@ export default ({
         break;
 
       default:
+        next();
         break;
     }
   });

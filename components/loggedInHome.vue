@@ -66,13 +66,17 @@ export default {
   },
   mounted() {
     this.$store.commit('updateLoading', true);
+    liff
+        .init({
+          liffId: process.env.liffId, // use own liffId
+          withLoginOnExternalBrowser: true
+        })
+        .then(() => {
     console.log(10);
     if (this.$route.path === '/login') {
       console.log(22);
       // eslint-disable-next-line no-undef
-      liff.login();
       this.$store.commit('updateLoading', false);
-      return;
     }
     // eslint-disable-next-line no-undef
     liff.getProfile().then(async(profile) => {
@@ -190,6 +194,11 @@ export default {
       console.log('error', err);
       this.$store.commit('updateLoading', false);
     });
+    })
+    .catch((e) => {
+      console.log(e);
+      alert("エラーが発生しました。お手数ですがお問合せアカウントからエラー内容をご連絡ください。: " + e)
+    })
   },
   methods: {
     send() {
