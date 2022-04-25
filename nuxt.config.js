@@ -60,7 +60,7 @@ export default {
       }
     ],
     script: [{
-      src: 'https://static.line-scdn.net/liff/edge/2.1/sdk.js'
+      src: 'https://static.line-scdn.net/liff/edge/2/sdk.js'
     }],
     link: [{
       rel: 'icon',
@@ -107,7 +107,7 @@ export default {
     [
       '@nuxtjs/dotenv',
       {
-        filename: process.env.NODE_ENV === 'development' ? './config/.env.dev' : './config/.env.prod'
+        filename: './config/.env.prod'
       }
     ]
   ],
@@ -144,7 +144,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
+    extend(config, ctx) { },
     analyze: true
   },
   server: {
