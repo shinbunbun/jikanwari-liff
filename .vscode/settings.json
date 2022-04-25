@@ -2,5 +2,6 @@
   "cSpell.words": [
     "jikanwari",
     "jikanwri"
-  ]
+  ],
+  "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"
 }
