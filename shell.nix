@@ -2,7 +2,7 @@
 
 pkgs.mkShell
 {
-  nativeBuildInputs = with pkgs; [ nodejs-16_x ];
+  nativeBuildInputs = with pkgs; [ nodejs-16_x ngrok ];
   shellHook = ''
     npm i;
   '';
