@@ -150,10 +150,10 @@ export default {
   server: {
     port: 3000,
     host: 'localhost',
-    https: process.env.NODE_ENV === 'production' ? {} : {
+    /* https: process.env.NODE_ENV === 'production' ? {} : {
       key: fs.readFileSync(path.resolve(__dirname, 'localhost-key.pem')),
       cert: fs.readFileSync(path.resolve(__dirname, 'localhost.pem'))
-    }
+    } */
   },
   /* env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
